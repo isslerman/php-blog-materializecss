@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("db.php");
-	if(!isset($_POST['post'])){
+	if(isset($_POST['post'])){
 		$title = strip_tags($_POST['title']);
 		$content = strip_tags($_POST['content']);
 
@@ -26,11 +26,11 @@ include_once("db.php");
 </head>
 <body>
 <div class="container">
-<form action="post.php" method="POST" role="form" enctype="multipart/form-data">
+<form action="post.php" method="POST" role="form">
 	<div class="form-group">
-		<label for="">Title</label>
-		<input type="text" class="form-control" id="" placeholder="Title" name="title"><br />
-		<textarea type="text" class="form-control" id="" placeholder="Content" name="content" rows="20"></textarea>
+		<label class="lead">Enter title:</label><input type="text" class="form-control" id="" placeholder="Enter Title" name="title"><br />
+		<label class="lead">Enter Content:</label>
+		<textarea type="text" class="form-control" id="" placeholder="Enter Content" name="content" rows="10"></textarea><br />
 		<input name="post" type="submit" value="Post" class="btn btn-primary">
 	</div>
 </form>
