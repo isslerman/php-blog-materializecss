@@ -8,13 +8,15 @@ include_once("db.php");
 <!-- Latest compiled and minified CSS -->
 <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" media="screen,projection">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
 	<title>My Blog</title>
 </head>
 <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 <div class="container">
 <?php
 	$sql = "SELECT * FROM posts ORDER BY id DESC";
@@ -50,8 +52,8 @@ if(mysqli_num_rows($result)>0){
 		              <p>".$row["date"]."</p>
 		            </div>
 				     <div class=\"card-action\">
-		              <a href=\"delete.php?del=$id\" class=\"waves-effect waves-light btn red\">Delete this Post</a>
-		              <a href=\"edit.php?edit=$id\" class=\"waves-effect waves-light btn green\">Edit this Post</a>
+		              <a href=\"delete.php?del=$id\" class=\"waves-effect waves-light btn\">Delete this Post</a>
+		              <a href=\"edit.php?edit=$id\" class=\"waves-effect waves-light btn\">Edit this Post</a>
 		            </div>
 		          </div>
 		        </div>
@@ -71,7 +73,7 @@ $db->close();
 
 <h3> Create a Post</h3>
 <br />
-<a href="post.php" target="_blank" class="waves-effect waves-light btn">Create a New Post</a>
+<a href="post.php" target="_blank" class="waves-effect waves-light btn blue">Create a New Post</a>
 </div>
 </body>
 </html>
