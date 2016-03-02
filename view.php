@@ -21,21 +21,6 @@ include_once("db.php");
 <?php
 	$sql = "SELECT * FROM posts ORDER BY id DESC";
 	$result = $db->query($sql);
-	#$posts = "";
-	#$id = $row['id'];
-	#$admin = "<div><a href='del_post.php?pid=$id'>Delete</a></div>";
-
-/*if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-       // echo "Post ID: " . $row["id"] . "<br /><br /><br />";
-        echo "Title: " . $row["title"]. "<br />";
-        echo "Content: " . $row["content"]. "<br />";
-        echo "Date:".$row["date"]."<br /><br />";
-
-    }
-} else {
-    echo "No  results";
-}*/
 if(mysqli_num_rows($result)>0){
 	while($row = mysqli_fetch_assoc($result)){
 		$id = $row['id'];
@@ -45,11 +30,11 @@ if(mysqli_num_rows($result)>0){
 		#$admin = "<div><a href='del_post.php?pid=$id>Delete&nbsp;</a><a href='edit.php?pid=$id>Edit&nbsp;</a>";
 		echo "<div class=\"row\">
 		        <div class=\"col s12 m6\">
-		          <div class=\"card blue-grey darken-1\">
+		          <div class=\"card  darken-1\">
 		            <div class=\"card-content white-text\">
-		              <span class=\"card-title\">".$title."</span>
-		              <p>".$row["content"]."</p>
-		              <p>".$row["date"]."</p>
+		              <span class=\"card-title\" style='color:#000;'>".$title."</span>
+		              <p style='color:#000;'>".$row["content"]."</p>
+		              <p style='color:#000;'>".$row["date"]."</p>
 		            </div>
 				     <div class=\"card-action\">
 		              <a href=\"delete.php?del=$id\" class=\"waves-effect waves-light btn\">Delete this Post</a>
