@@ -1,4 +1,4 @@
-# php-crud-bootstrap
+# PHP Blog using Materialize CSS
 A simple CRUD Blog App in Core PHP using Materialize CSS
 
  Below is a list of possible attacks this guide tries to defend against:
